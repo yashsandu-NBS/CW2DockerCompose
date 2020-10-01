@@ -1,12 +1,14 @@
 version: '3.7'
 services:
   flask-app:
+    image: localhost:8082/flask-app:latest
     build: ./flask-app
     ports:
     - target: 5000
       published: 5000
       protocol: tcp
   mysql:
+    image: localhost:8082/db:latest
     build: ./db
     ports:
     - target: 3306
